@@ -1,0 +1,15 @@
+<h2>lista de tarefas</h2>
+
+@for (a of tarefas; track a.id){
+  @if(mostrar || a.feito){
+    <p>{{a.id}}-{{a.Nome}}<span>{{a.feito? ' concluida':''}} </span></p>
+  }
+
+}
+@if(!mostrar && tarefasConcluidas().length==0){
+<p>não há tarefas concluidas</p>
+}
+
+<button (click)="Exibir()">{{mostrar ? "mostar apenas concluidas":"mostrar todas"}}</button>
+
+
